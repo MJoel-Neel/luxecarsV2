@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxeCars — Prestige Automobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">Luxe<span>Cars</span></div>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Accueil</a></li>
+    <li><a href="#vehicules">Véhicules</a></li>
+    <li><a href="#pourquoi">Pourquoi Nous</a></li>
+    <li><a href="#ambitions">Ambitions</a></li>
+    <li><a href="#apropos">À Propos</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-icon cart-toggle" id="cartToggle" title="Panier" aria-label="Ouvrir le panier">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="btn-outline" id="loginBtn">Connexion</button>
+    <button class="btn-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg-text">LUXE</div>
+  <div class="hero-content">
+    <p class="hero-sub">Collection Prestige 2024</p>
+    <h1 class="hero-title">Conduisez<br><span>l'Excellence</span></h1>
+    <p class="hero-desc">Découvrez notre sélection exclusive de véhicules d'exception. Chaque voiture est une œuvre d'art mécanique conçue pour ceux qui refusent la médiocrité.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollTo('#vehicules')">Explorer les Véhicules</button>
+      <button class="btn-ghost" onclick="openModal('contactModal')">Prendre RDV</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Véhicules</span></div>
+      <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Satisfaction</span></div>
+      <div class="stat"><span class="stat-num">15ans</span><span class="stat-label">d'Expertise</span></div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="image/img1.png" alt="Voiture de luxe" />
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Défiler</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── VÉHICULES ──────────────────────────────────────────── -->
+<section class="section" id="vehicules">
+  <div class="section-header">
+    <p class="section-tag">Notre Flotte</p>
+    <h2 class="section-title">Nos Véhicules</h2>
+    <p class="section-sub">Chaque modèle représente le summum de la performance et du raffinement.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="sport">Sport</button>
+    <button class="filter-btn" data-filter="suv">SUV</button>
+    <button class="filter-btn" data-filter="berline">Berline</button>
+  </div>
+
+  <div class="cars-grid" id="carsGrid">
+    <!-- Injected by JS -->
+  </div>
+</section>
+
+<!-- ─── POURQUOI NOUS ──────────────────────────────────────── -->
+<section class="section section-dark" id="pourquoi">
+  <div class="section-header">
+    <p class="section-tag">Nos Atouts</p>
+    <h2 class="section-title">Pourquoi Nous Choisir</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">◈</div>
+      <h3>Sélection Premium</h3>
+      <p>Chaque véhicule est minutieusement inspecté et certifié par nos experts avant d'intégrer notre catalogue exclusif.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">◉</div>
+      <h3>Financement Sur Mesure</h3>
+      <p>Des solutions de financement adaptées à votre profil, avec des taux préférentiels négociés auprès de nos partenaires bancaires.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">◎</div>
+      <h3>Service Conciergerie</h3>
+      <p>Livraison à domicile, prise en charge de votre ancien véhicule, assistance 24h/24 : votre confort est notre priorité.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⬡</div>
+      <h3>Garantie Étendue</h3>
+      <p>Bénéficiez d'une garantie constructeur prolongée jusqu'à 3 ans sur tous nos véhicules certifiés LuxeCars.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">◆</div>
+      <h3>Essai Sans Engagement</h3>
+      <p>Prenez le volant de votre futur véhicule pendant 48h avant de vous décider. Aucun engagement, zéro pression.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✦</div>
+      <h3>Réseau International</h3>
+      <p>Accès à un réseau mondial de concessions partenaires pour vous accompagner partout où vous vous trouvez.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AMBITIONS ──────────────────────────────────────────── -->
+<section class="section section-ambitions" id="ambitions">
+  <div class="ambitions-wrapper">
+    <div class="ambitions-text">
+      <p class="section-tag">Notre Vision</p>
+      <h2 class="section-title">Nos Ambitions</h2>
+      <p class="ambitions-desc">Chez LuxeCars, nous ne vendons pas de simples automobiles — nous incarnons un art de vivre. Notre ambition est de devenir la référence incontournable du marché automobile de luxe en Europe d'ici 2028.</p>
+      <ul class="ambitions-list">
+        <li><span class="amb-bullet">→</span> Ouvrir 12 nouvelles concessions en Europe d'ici 2027</li>
+        <li><span class="amb-bullet">→</span> Lancer notre plateforme de location premium en 2025</li>
+        <li><span class="amb-bullet">→</span> Atteindre 0 émission carbone sur notre flotte logistique</li>
+        <li><span class="amb-bullet">→</span> Proposer 100% de véhicules hybrides ou électriques d'ici 2030</li>
+        <li><span class="amb-bullet">→</span> Créer l'académie LuxeCars pour former les passionnés de demain</li>
+      </ul>
+      <button class="btn-primary" onclick="openModal('contactModal')">Rejoindre l'Aventure</button>
+    </div>
+    <div class="ambitions-visual">
+      <div class="ambitions-card">
+        <div class="amb-year">2025</div>
+        <div class="amb-goal">Lancement Plateforme Location</div>
+      </div>
+      <div class="ambitions-card featured">
+        <div class="amb-year">2027</div>
+        <div class="amb-goal">12 Concessions Européennes</div>
+      </div>
+      <div class="ambitions-card">
+        <div class="amb-year">2030</div>
+        <div class="amb-goal">Flotte 100% Verte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── À PROPOS ────────────────────────────────────────────── -->
+<section class="section section-dark" id="apropos">
+  <div class="about-wrapper">
+    <div class="about-img">
+      <img src="image/ferrari IMG_7291-scaled.jpg" alt="Ferrari LuxeCars" />
+      <div class="about-badge">Depuis 2009</div>
+    </div>
+    <div class="about-text">
+      <p class="section-tag">Notre Histoire</p>
+      <h2 class="section-title">À Propos de LuxeCars</h2>
+      <p>Fondée en 2009 par des passionnés de mécanique et d'élégance, LuxeCars est née d'une conviction simple : chaque conducteur mérite un véhicule exceptionnel. Ce qui a débuté comme une petite concession spécialisée à Paris est devenu l'une des enseignes automobiles de prestige les plus respectées de France.</p>
+      <p>Notre équipe de 80 experts partage une même obsession : vous offrir non seulement une voiture, mais une expérience inoubliable, du premier contact jusqu'au suivi après-vente.</p>
+      <div class="about-numbers">
+        <div><strong>80+</strong><span>Collaborateurs</span></div>
+        <div><strong>5 000+</strong><span>Clients Satisfaits</span></div>
+        <div><strong>3</strong><span>Concessions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ────────────────────────────────────────────────── -->
+<section class="section" id="faq">
+  <div class="section-header">
+    <p class="section-tag">Questions Fréquentes</p>
+    <h2 class="section-title">FAQ</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Comment fonctionne le financement LuxeCars ? <span>+</span></button>
+      <div class="faq-a"><p>Nous proposons des solutions de financement 100% personnalisées : crédit classique, leasing, LOA ou LLD. Un conseiller dédié étudie votre dossier et vous présente les meilleures options disponibles. Réponse de principe sous 48h.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Puis-je essayer un véhicule avant de l'acheter ? <span>+</span></button>
+      <div class="faq-a"><p>Absolument. Nous offrons un essai de 48h sans engagement pour tous les véhicules de notre catalogue. Il suffit de présenter votre permis de conduire valide et une pièce d'identité.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Quelle garantie accompagne les véhicules LuxeCars ? <span>+</span></button>
+      <div class="faq-a"><p>Tous nos véhicules certifiés bénéficient d'une garantie minimum de 12 mois, extensible jusqu'à 3 ans. La garantie couvre les pièces mécaniques et électroniques principales.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Proposez-vous la livraison à domicile ? <span>+</span></button>
+      <div class="faq-a"><p>Oui, nous livrons partout en France métropolitaine dans un délai de 5 à 10 jours ouvrés. La livraison est offerte pour tout achat supérieur à 80 000€.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Comment puis-je reprendre mon ancien véhicule ? <span>+</span></button>
+      <div class="faq-a"><p>Notre service de reprise est disponible pour tous les véhicules, quelle que soit la marque. Un expert LuxeCars évalue gratuitement votre véhicule et vous soumet une offre dans les 24h.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────────────── -->
+<section class="section section-dark" id="contact">
+  <div class="section-header">
+    <p class="section-tag">Contactez-nous</p>
+    <h2 class="section-title">Parlons de Votre Projet</h2>
+  </div>
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <div class="contact-item"><span>📍</span><div><strong>Adresse</strong><p>12 Avenue de la Prestige, 75008 Paris</p></div></div>
+      <div class="contact-item"><span>📞</span><div><strong>Téléphone</strong><p>+33 1 23 45 67 89</p></div></div>
+      <div class="contact-item"><span>✉</span><div><strong>Email</strong><p>contact@luxecars.fr</p></div></div>
+      <div class="contact-item"><span>⏱</span><div><strong>Horaires</strong><p>Lun–Sam : 9h00–19h00</p></div></div>
+    </div>
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cNom">Nom complet *</label>
+          <input type="text" id="cNom" name="nom" placeholder="Jean Dupont" />
+          <span class="field-error" id="err-cNom"></span>
+        </div>
+        <div class="form-group">
+          <label for="cEmail">Email *</label>
+          <input type="email" id="cEmail" name="email" placeholder="jean@exemple.fr" />
+          <span class="field-error" id="err-cEmail"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cMessage">Message *</label>
+        <textarea id="cMessage" name="message" rows="4" placeholder="Décrivez votre projet..."></textarea>
+        <span class="field-error" id="err-cMessage"></span>
+      </div>
+      <button type="submit" class="btn-primary">Envoyer le Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">Luxe<span>Cars</span></div>
+      <p>L'excellence automobile à portée de main. Parce que vous le méritez.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#vehicules">Véhicules</a></li>
+        <li><a href="#pourquoi">Pourquoi Nous</a></li>
+        <li><a href="#apropos">À Propos</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#ambitions">Nos Ambitions</a></li>
+        <li><a href="#" onclick="openModal('loginModal');return false;">Espace Client</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Newsletter Prestige</h4>
+      <p>Recevez en avant-première nos nouvelles acquisitions.</p>
+      <div class="newsletter-form">
+        <input type="email" id="nlEmail" placeholder="votre@email.fr" />
+        <button onclick="subscribeNewsletter()">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 LuxeCars. Tous droits réservés.</p>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── PANIER ──────────────────────────────────────────────── -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>Mon Panier</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Votre panier est vide</p>
+    </div>
+    <ul class="cart-items" id="cartItems"></ul>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total-line">
+      <span>Total</span>
+      <strong id="cartTotal">0 €</strong>
+    </div>
+    <button class="btn-primary full" onclick="checkout()">Procéder au Paiement</button>
+    <button class="btn-ghost full" onclick="clearCart()">Vider le Panier</button>
+  </div>
+</div>
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- ─── MODAL LOGIN ─────────────────────────────────────────── -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    <div class="modal-tabs">
+      <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Connexion</button>
+      <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Inscription</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="formLogin" class="tab-content active">
+      <h2 class="modal-title">Bon Retour</h2>
+      <p class="modal-sub">Accédez à votre espace personnel</p>
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="lEmail">Email *</label>
+          <input type="email" id="lEmail" name="email" placeholder="votre@email.fr" />
+          <span class="field-error" id="err-lEmail"></span>
+        </div>
+        <div class="form-group">
+          <label for="lPassword">Mot de passe *</label>
+          <div class="input-password">
+            <input type="password" id="lPassword" name="password" placeholder="••••••••" />
+            <button type="button" class="toggle-pw" onclick="togglePw('lPassword', this)">👁</button>
+          </div>
+          <span class="field-error" id="err-lPassword"></span>
+        </div>
+        <button type="submit" class="btn-primary full">Se Connecter</button>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div id="formRegister" class="tab-content">
+      <h2 class="modal-title">Créer un Compte</h2>
+      <p class="modal-sub">Rejoignez la communauté LuxeCars</p>
+      <form id="registerForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="rNom">Nom complet *</label>
+            <input type="text" id="rNom" name="nom" placeholder="Jean Dupont" />
+            <span class="field-error" id="err-rNom"></span>
+          </div>
+          <div class="form-group">
+            <label for="rTel">Téléphone *</label>
+            <input type="tel" id="rTel" name="tel" placeholder="+33 6 12 34 56 78" />
+            <span class="field-error" id="err-rTel"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="rEmail">Email *</label>
+          <input type="email" id="rEmail" name="email" placeholder="votre@email.fr" />
+          <span class="field-error" id="err-rEmail"></span>
+        </div>
+        <div class="form-group">
+          <label for="rPassword">Mot de passe * <small>(min. 8 caractères)</small></label>
+          <div class="input-password">
+            <input type="password" id="rPassword" name="password" placeholder="••••••••" />
+            <button type="button" class="toggle-pw" onclick="togglePw('rPassword', this)">👁</button>
+          </div>
+          <span class="field-error" id="err-rPassword"></span>
+          <div class="pw-strength" id="pwStrength"><div class="pw-bar" id="pwBar"></div></div>
+        </div>
+        <div class="form-group">
+          <label for="rConfirm">Confirmer le mot de passe *</label>
+          <input type="password" id="rConfirm" name="confirm" placeholder="••••••••" />
+          <span class="field-error" id="err-rConfirm"></span>
+        </div>
+        <button type="submit" class="btn-primary full">Créer mon Compte</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL VÉHICULE ──────────────────────────────────────── -->
+<div class="modal-overlay" id="carModal">
+  <div class="modal modal-car">
+    <button class="modal-close" onclick="closeModal('carModal')">✕</button>
+    <div class="car-modal-content" id="carModalContent"></div>
+  </div>
+</div>
+
+<!-- ─── MODAL CONTACT ───────────────────────────────────────── -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('contactModal')">✕</button>
+    <h2 class="modal-title">Prendre Rendez-vous</h2>
+    <p class="modal-sub">Un conseiller vous contactera sous 24h</p>
+    <form id="rdvForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="rdvNom">Nom *</label>
+          <input type="text" id="rdvNom" placeholder="Jean Dupont" />
+          <span class="field-error" id="err-rdvNom"></span>
+        </div>
+        <div class="form-group">
+          <label for="rdvEmail">Email *</label>
+          <input type="email" id="rdvEmail" placeholder="jean@exemple.fr" />
+          <span class="field-error" id="err-rdvEmail"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rdvDate">Date souhaitée *</label>
+        <input type="date" id="rdvDate" />
+        <span class="field-error" id="err-rdvDate"></span>
+      </div>
+      <button type="submit" class="btn-primary full">Confirmer le RDV</button>
+    </form>
+  </div>
+</div>
+
+<!-- ─── TOAST ───────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────── -->
+<script src="app.js"></script>
+</body>
+</html>
